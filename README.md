@@ -7,7 +7,6 @@ We will add the source code here very soon.
 ## Publication
 When using the provided designs in this repository, please refer to the following citation:
 
-AIST TSN Endpoint Supporting Asynchronous Traffic Shaping (ATS)
 > Takahiro HIROFUCHI, Akram BEN AHMED, and Takaaki FUKAI, "Implementation and Evaluation of a Time-Sensitive Networking Endpoint for Asynchronous Traffic Shaping", IEEE Access, Early Access, 2026, doi: 10.1109/ACCESS.2026.3661078, https://ieeexplore.ieee.org/document/11372664
 
 ## Build
