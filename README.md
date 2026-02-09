@@ -1,5 +1,5 @@
 # AIST-TSN Endpoint for Asynchronous Traffic Shaping (ATS)
-This repository repository is part of the [AIST TSN](https://github.com/CCIRT/aist-tsn) project.
+This repository repository is part of the [AIST-TSN](https://github.com/CCIRT/aist-tsn) project.
 This is an implementation of a Time-Sensitive Networking (TSN) endpoint for Asynchronous Traffic Shaping (ATS). It supports network interface cards with transmit timing control, such as Intel i210 and i225 NICs. The implementation generates IEEE-compliant ATS flows based on the Committed Information Rate and Committed Burst Size. To the best of our knowledge, this is the first real-world implementation of an ATS endpoint.
 
 We will add the source code here very soon.
