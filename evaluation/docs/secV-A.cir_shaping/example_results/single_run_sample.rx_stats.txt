@@ -1,0 +1,50 @@
+$ sudo ../../secV-A.cir_shaping.rx_stats.sh -N -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> irqbalance check ok
+>>> cpupower check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> waiting for tx side to continue...
+>>> starting tcpdump: result_secV-A.netns.cir100Mbps.dur10.2.pcap
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+81274 packets captured
+81274 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 1566621 (tcpdump)
+>>> calculating statistics of received packet intervals
+================= RUN 1 ======================
+- PCAPFILE: result_secV-A.netns.cir100Mbps.dur10.2.pcap
+- CIR (Mbps): 100
+
+
+### Overall rate
+
+Flow	Rate(Mbps)	Duration(s)
+1	100.00123113094783	9.999829849
+
+----- Flow 1 -----
+NumPackets: 81274
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+123039.99912640115	123041	123058	123017	41	6.318794958379091
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+123039.99912640115
+123058
+123017
+41
+6.318794958379091
+==============================================
+>>> waiting for tx side to continue...
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 1566196 (nc 11111)

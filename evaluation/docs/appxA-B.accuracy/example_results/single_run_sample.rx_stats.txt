@@ -1,0 +1,73 @@
+$ sudo bash ../../appxA-B.accuracy.rx_stats.sh -N -c ../../configs/netns.conf
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> irqbalance check ok
+>>> cpupower check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> Current ethernet payload size: 46 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 100 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 300 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 500 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 700 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 900 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1100 bytes
+>>> waiting for tx side to continue...
+>>> starting tcpdump: result_appxA-B.netns.eth1100.interval9600.dur5.num520833.1.pcap
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+520833 packets captured
+520833 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 3317517 (tcpdump)
+>>> calculating statistics of received packet intervals
+================= RUN 1 ======================
+- PCAPFILE: result_appxA-B.netns.eth1100.interval9600.dur5.num520833.1.pcap
+- Ethernet Payload Size (bytes): 1100
+- Transmission Duration (s): 5
+- Interval (ns): 9600
+- Number of Frames: 520833
+
+----- Flow 1 -----
+NumPackets: 520833
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+9599.999994239985	9600.0	9625	9576	49	9.860795964530329
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+9599.999994239985
+9625
+9576
+49
+9.860795964530329
+==============================================
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1300 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1500 bytes
+>>> waiting for tx side to continue...
+>>> proceeding to the next Ethernet payload size
+>>> all ethernet payload sizes complete, exiting...
+>>> cleaning up
+0
+>>> killed 3317090 (nc 11111)

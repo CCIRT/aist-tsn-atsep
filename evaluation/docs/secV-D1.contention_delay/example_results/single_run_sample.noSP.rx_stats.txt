@@ -1,0 +1,100 @@
+$ sudo ../../secV-D1.contention_delay.rx_stats.sh -c ../../configs/netns.conf
+>>> root privilege check ok
+>>> irqbalance check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side...
+>>> starting tcpdump: result_secV-D1.noSP.1.tc7_tc6.pcap
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+>>> cleaning up
+0
+>>> killed 1588270 (nc 11111)
+0
+>>> killed 1588271 (nc 22222)
+200000 packets captured
+200000 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 1588535 (tcpdump)
+==============================================
+- PCAPFILE: result_secV-D1.noSP.1.tc7_tc6.pcap
+- iperf3 server log: result_secV-D1.noSP.1.iperf3.log
+
+# Calculating statistics of packet latency
+
+## ATS1
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+1046.28061	430.0	12716	420	12296	2156.968173916349
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+1046.28061
+12716
+420
+12296
+2156.968173916349
+--------------------------------------
+
+## ATS2
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+1049.01252	430.0	12750	420	12330	2164.639739777326
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+1049.01252
+12750
+420
+12330
+2164.639739777326
+
+----------------------------------------------
+# Calculating statistics of received packet intervals
+
+## ATS1
+
+----- Flow 1 -----
+NumPackets: 100000
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+123040.0000500005	123041	135330	121801	13529	1220.0008655948727
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+123040.0000500005
+135330
+121801
+13529
+1220.0008655948727
+--------------------------------------
+
+## ATS2
+
+----- Flow 1 -----
+NumPackets: 100000
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+121823.87698876989	121825	123058	109513	13545	1223.2516700464193
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+121823.87698876989
+123058
+109513
+13545
+1223.2516700464193
+==============================================

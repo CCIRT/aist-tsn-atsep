@@ -1,0 +1,81 @@
+$ sudo ../../secV-C.priority.rx_stats.sh -N -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> irqbalance check ok
+>>> cpupower check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> waiting for tx side to continue...
+>>> starting tcpdump: result_secV-C.netns.cir100Mbps.dur5.1.pcap
+>>> starting iperf3 server: result_secV-C.netns.cir100Mbps.dur5.1.iperf3.log
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+0
+>>> killed 1583230 (iperf server)
+40637 packets captured
+40637 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 1583225 (tcpdump)
+>>> calculating statistics of received packet intervals
+================= RUN 1 ======================
+- PCAPFILE: result_secV-C.netns.cir100Mbps.dur5.1.pcap
+- iperf3 server log: result_secV-C.netns.cir100Mbps.dur5.1.iperf3.log
+- CIR (Mbps): 100
+
+
+### Overall rate
+
+Flow	Rate(Mbps)	Duration(s)
+1	100.00246131215681	4.999853418
+
+----- Flow 1 -----
+NumPackets: 40637
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+123039.99945860813	123041.0	123042	123033	9	2.818132799686235
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+123039.99945860813
+123042
+123033
+9
+2.818132799686235
+
+# iperf3 server log
+iperf3: the client has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 10.0.200.11, port 47250
+[  5] local 10.0.200.12 port 5201 connected to 10.0.200.11 port 48677
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-1.00   sec   109 MBytes   914 Mbits/sec  0.017 ms  0/77639 (0%)  
+[  5]   1.00-2.00   sec   114 MBytes   957 Mbits/sec  0.026 ms  47/81271 (0.058%)  
+[  5]   2.00-3.00   sec   114 MBytes   953 Mbits/sec  0.021 ms  0/80950 (0%)  
+[  5]   3.00-4.00   sec   103 MBytes   861 Mbits/sec  0.025 ms  0/73142 (0%)  
+[  5]   4.00-5.00   sec   103 MBytes   861 Mbits/sec  0.032 ms  0/73145 (0%)  
+[  5]   5.00-6.00   sec   103 MBytes   861 Mbits/sec  0.017 ms  0/73152 (0%)  
+[  5]   6.00-7.00   sec   103 MBytes   861 Mbits/sec  0.021 ms  0/73147 (0%)  
+[  5]   7.00-8.00   sec   103 MBytes   865 Mbits/sec  0.024 ms  0/73477 (0%)  
+[  5]   8.00-9.00   sec   114 MBytes   957 Mbits/sec  0.033 ms  0/81271 (0%)  
+[  5]   9.00-10.00  sec   114 MBytes   957 Mbits/sec  0.014 ms  0/81284 (0%)  
+[  5]   9.00-10.00  sec   114 MBytes   957 Mbits/sec  0.014 ms  0/81284 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.16 GBytes   997 Mbits/sec  0.013 ms  47/846268 (0.0056%)  receiver
+iperf3: interrupt - the server has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+==============================================
+>>> waiting for tx side to continue...
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 1582898 (nc 11111)

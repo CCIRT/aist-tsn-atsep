@@ -1,0 +1,148 @@
+$ sudo bash ../../secV-B.cbs_shaping.rx_stats.sh -N -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> irqbalance check ok
+>>> cpupower check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> waiting for tx side to continue...
+>>> starting tcpdump: result_secV-B.netns.cbs8x.num100.1.pcap
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+100 packets captured
+100 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 3221269 (tcpdump)
+>>> calculating statistics of received packet intervals and all interval values
+================= RUN 1 ======================
+- PCAPFILE: result_secV-B.netns.cbs8x.num100.1.pcap
+- CBS multiplier: 8
+
+----- Flow 1 -----
+NumPackets: 100
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+114340.36363636363	123041	123058	12304	110754	29581.583002395997
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+114340.36363636363
+123058
+12304
+110754
+29581.583002395997
+
+### Packet intervals (nanoseconds)
+
+No.	Interval
+0	12320
+1	12336
+2	12321
+3	12320
+4	12320
+5	12304
+6	12320
+7	36800
+8	123041
+9	123042
+10	123041
+11	123041
+12	123033
+13	123041
+14	123041
+15	123041
+16	123041
+17	123058
+18	123041
+19	123033
+20	123041
+21	123025
+22	123041
+23	123041
+24	123042
+25	123041
+26	123033
+27	123041
+28	123041
+29	123041
+30	123041
+31	123041
+32	123042
+33	123049
+34	123041
+35	123041
+36	123041
+37	123025
+38	123041
+39	123042
+40	123033
+41	123041
+42	123041
+43	123041
+44	123041
+45	123041
+46	123041
+47	123034
+48	123041
+49	123057
+50	123041
+51	123041
+52	123041
+53	123025
+54	123033
+55	123042
+56	123041
+57	123041
+58	123041
+59	123041
+60	123041
+61	123033
+62	123042
+63	123041
+64	123041
+65	123057
+66	123041
+67	123041
+68	123041
+69	123017
+70	123042
+71	123041
+72	123041
+73	123041
+74	123041
+75	123041
+76	123033
+77	123041
+78	123042
+79	123041
+80	123041
+81	123057
+82	123041
+83	123033
+84	123041
+85	123026
+86	123041
+87	123041
+88	123041
+89	123041
+90	123033
+91	123041
+92	123041
+93	123042
+94	123041
+95	123041
+96	123041
+97	123049
+98	123041
+>>> appended raw interval summary: result_secV-B.netns.interval_summary.txt
+==============================================
+>>> waiting for tx side to continue...
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 3220952 (nc 11111)

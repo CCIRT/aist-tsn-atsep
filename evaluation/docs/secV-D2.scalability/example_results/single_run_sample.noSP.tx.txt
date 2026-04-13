@@ -1,0 +1,43 @@
+$ sudo bash ../../secV-D2.scalability.tx.sh -t  -c ../../configs/netns.conf -1 0,2,4,6,8,10,12,14 -n 100000 -b 100000000 -i 1000000  -D 250000 -m 300000
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> cpupower check ok
+>>> creating netns...
+>>> netns atsclient and atsserver already exist
+>>> enp1s0 enp3s0 EEE set to off
+>>> deleting existing qdisc on enp1s0 if exists. Ignore 'Error: Cannot delete qdisc with handle of zero.' error message if it appears.
+>>> atsclient enp1s0 qdisc set
+>>> atsclient enp1s0 ring buffer set
+>>> adding ARP entry. Ignore 'RTNETLINK answers: File exists' error message if it appears.
+RTNETLINK answers: File exists
+>>> atsclient enp1s0 arp table set
+>>> clocksync ts2phc and phc2sys set
+>>>     - log file: result_secV-D2.noSP.ts2phc.log
+>>>     - log file: result_secV-D2.noSP.phc2sys.log
+>>> check the above log files and wait for clock sync to stabilize before proceeding...
+>>> proceed?(y/n) :y
+>>> warmup start
+
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 900000000, num_packets: 50000, dest_port: 11111, now: 1775070693133113079
+
+>>> warmup complete
+>>> ats run start
+>>> Enter a number of competing flows (0~63), excluding the main flow , or "n" to quit: 3
+>>> RX side is ready, starting...
+>>> starting ATS run. #flows: 4, #total_send_packets: 434607
+
+
+>>> sleeping 8 seconds to wait for the remaining packets to be sent...
+>>> ATS run complete
+>>> killing iperf client
+>>> waiting for RX side to finish processing...
+>>> RX side finished processing, continuing...
+>>> Enter a number of competing flows (0~63), excluding the main flow , or "n" to quit: n
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 3263926 (phc2sys)
+0
+>>> killed 3263925 (ts2phc)

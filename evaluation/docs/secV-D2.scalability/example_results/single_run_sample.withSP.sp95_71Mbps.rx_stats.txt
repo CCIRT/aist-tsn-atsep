@@ -1,0 +1,121 @@
+$ sudo bash ../../secV-D2.scalability.rx_stats.sh -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> irqbalance check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> waiting for tx side to continue...
+>>> atsserver additional receiver started (2-4)
+>>> starting tcpdump: result_secV-D2.withSP.num_competeflow3.run2.pcap
+>>> starting iperf3 server: result_secV-D2.withSP.num_competeflow3.run2.iperf3.log
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+                                                                                   0
+                                                                                    >>> killed 3273332 (iperf server)
+           434607 packets captured
+434607 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 3273330 (tcpdump)
+>>> calculating statistics of received packet intervals
+================= RUN 1 ======================
+- PCAPFILE: result_secV-D2.withSP.num_competeflow3.run2.pcap
+- iperf3 server log: result_secV-D2.withSP.num_competeflow3.run2.iperf3.log
+- number of competing flows: 3
+- total number of flows: 4
+
+# Calculating statistics of packet latency of the main flow
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+3992.95131	445.0	46083	421	45662	5431.082238559759
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+3992.95131
+46083
+421
+45662
+5431.082238559759
+
+----------------------------------------------
+# Calculating statistics of received packet intervals
+
+
+### Overall rate
+
+Flow	Rate(Mbps)	Duration(s)
+1	100.0009999531069	12.303876967
+
+----- Flow 1 -----
+NumPackets: 100000
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+123040.0000700007	123041	161129	105601	55528	5342.9401396737285
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+123040.0000700007
+161129
+105601
+55528
+5342.9401396737285
+
+# iperf3 server log
+
+iperf3: the client has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 10.0.200.11, port 55166
+[  5] local 10.0.200.12 port 5201 connected to 10.0.200.11 port 33440
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-1.00   sec  10.9 MBytes  91.4 Mbits/sec  0.058 ms  0/7765 (0%)  
+[  5]   1.00-2.00   sec  11.4 MBytes  95.7 Mbits/sec  0.059 ms  0/8127 (0%)  
+[  5]   2.00-3.00   sec  11.4 MBytes  95.7 Mbits/sec  0.062 ms  0/8128 (0%)  
+[  5]   3.00-4.00   sec  11.4 MBytes  95.8 Mbits/sec  0.014 ms  0/8134 (0%)  
+[  5]   4.00-5.00   sec  11.4 MBytes  95.7 Mbits/sec  0.028 ms  0/8123 (0%)  
+[  5]   5.00-6.00   sec  11.4 MBytes  95.7 Mbits/sec  0.045 ms  0/8125 (0%)  
+[  5]   6.00-7.00   sec  11.4 MBytes  95.7 Mbits/sec  0.040 ms  0/8127 (0%)  
+[  5]   7.00-8.00   sec  11.4 MBytes  95.8 Mbits/sec  0.018 ms  0/8133 (0%)  
+[  5]   8.00-9.00   sec  11.4 MBytes  95.7 Mbits/sec  0.027 ms  0/8126 (0%)  
+[  5]   9.00-10.00  sec  11.4 MBytes  95.7 Mbits/sec  0.060 ms  0/8125 (0%)  
+[  5]  10.00-11.00  sec  11.4 MBytes  95.8 Mbits/sec  0.010 ms  0/8133 (0%)  
+[  5]  11.00-12.00  sec  11.4 MBytes  95.7 Mbits/sec  0.032 ms  0/8124 (0%)  
+[  5]  12.00-13.00  sec  11.4 MBytes  95.7 Mbits/sec  0.043 ms  0/8125 (0%)  
+[  5]  13.00-14.00  sec  11.4 MBytes  95.7 Mbits/sec  0.038 ms  0/8128 (0%)  
+[  5]  14.00-15.00  sec  11.4 MBytes  95.8 Mbits/sec  0.028 ms  0/8132 (0%)  
+[  5]  15.00-16.00  sec  11.4 MBytes  95.7 Mbits/sec  0.027 ms  0/8126 (0%)  
+[  5]  16.00-17.00  sec  11.4 MBytes  95.7 Mbits/sec  0.058 ms  0/8125 (0%)  
+[  5]  17.00-18.00  sec  11.4 MBytes  95.7 Mbits/sec  0.059 ms  0/8127 (0%)  
+[  5]  18.00-19.00  sec  11.4 MBytes  95.7 Mbits/sec  0.058 ms  0/8128 (0%)  
+[  5]  19.00-20.00  sec  11.4 MBytes  95.7 Mbits/sec  0.059 ms  0/8127 (0%)  
+[  5]  20.00-21.00  sec  11.4 MBytes  95.7 Mbits/sec  0.058 ms  0/8128 (0%)  
+[  5]  21.00-22.00  sec  11.4 MBytes  95.7 Mbits/sec  0.059 ms  0/8127 (0%)  
+[  5]  22.00-23.00  sec  11.4 MBytes  95.7 Mbits/sec  0.058 ms  0/8128 (0%)  
+[  5]  22.00-23.00  sec  11.4 MBytes  95.7 Mbits/sec  0.058 ms  0/8128 (0%)  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-23.00  sec   266 MBytes  97.0 Mbits/sec  0.049 ms  0/189520 (0%)  receiver
+iperf3: interrupt - the server has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+==============================================
+
+>>> waiting for tx side to continue...
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 3272744 (nc 11111)
+0
+ >>> killed 3273327 (nc 11112)
+                              0
+>>> killed 3273328 (nc 11113)
+0
+ >>> killed 3273329 (nc 11114)

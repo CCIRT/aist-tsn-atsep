@@ -1,0 +1,51 @@
+$ sudo ../../secV-D1.contention_delay.tx.sh -t -c ../../configs/netns.conf
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> cpupower check ok
+>>> creating netns...
+>>> netns atsclient and atsserver already exist
+>>> enp1s0 enp3s0 EEE set to off
+>>> deleting existing qdisc on enp1s0 if exists. Ignore 'Error: Cannot delete qdisc with handle of zero.' error message if it appears.
+>>> atsclient enp1s0 qdisc set
+>>> atsclient enp1s0 ring buffer set
+>>> adding ARP entry. Ignore 'RTNETLINK answers: File exists' error message if it appears.
+RTNETLINK answers: File exists
+>>> atsclient enp1s0 arp table set
+>>> clocksync ts2phc and phc2sys set
+>>>     - log file: result_secV-D1.noSP.ts2phc.log
+>>>     - log file: result_secV-D1.noSP.phc2sys.log
+>>> check the above log files and wait for clock sync to stabilize before proceeding...
+>>> proceed?(y/n) :y
+>>> warmup start
+
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 900000000, num_packets: 50000, dest_port: 11111, now: 1774482171103040266
+
+>>> warmup complete
+>>> ats run start
+>>> RX side is ready, starting...
+>>> starting ATS1 run with CIR (Mbps): 100, #frames: 100000, SO_PRIORITY: 3, CPU: 2
+>>> starting ATS2 run with CIR (Mbps): 101, #frames: 100000, SO_PRIORITY: 2, CPU: 4
+
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 100000000, num_packets: 100000, dest_port: 11111, now: 1774482175230033562
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 101000000, num_packets: 100000, dest_port: 22222, now: 1774482175231024310
+elapsed_ns=12182278176
+elapsed_sec=12.182278
+bits=1230400000
+rate_bps=100999171.273562
+
+elapsed_ns=12303876960
+elapsed_sec=12.303877
+bits=1230400000
+rate_bps=100001000.010000
+>>> ATS run complete
+>>> cleaning up
+0
+>>> killed 1588471 (phc2sys)
+0
+>>> killed 1588470 (ts2phc)

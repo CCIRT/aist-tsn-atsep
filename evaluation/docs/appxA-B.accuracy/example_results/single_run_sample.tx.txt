@@ -1,0 +1,79 @@
+$ sudo bash ../../appxA-B.accuracy.tx.sh -N -t -T 5 -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> cpupower check ok
+>>> creating netns...
+>>> netns atsclient and atsserver already exist
+>>> enp1s0 enp3s0 EEE set to off
+>>> deleting existing qdisc on enp1s0 if exists. Ignore 'Error: Cannot delete qdisc with handle of zero.' error message if it appears.
+>>> atsclient enp1s0 qdisc set
+>>> atsclient enp1s0 ring buffer set
+>>> adding ARP entry. Ignore 'RTNETLINK answers: File exists' error message if it appears.
+RTNETLINK answers: File exists
+>>> atsclient enp1s0 arp table set
+>>> clocksync ts2phc and phc2sys set
+>>>     - log file: result_appxA-B.netns.ts2phc.log
+>>>     - log file: result_appxA-B.netns.phc2sys.log
+>>> check the above log files and wait for clock sync to stabilize before proceeding...
+>>> proceed?(y/n) :y
+>>> warmup start
+
+Unicast destination is:	10.0.200.12:11111
+Finished sending packets...
+- num of sent packets:	50000
+- num of SO_TXTIME err:	6
+- num of sendmsg err:	0
+- num of times socket unblocking delay detected:	0
+
+>>> warmup complete
+
+>>> The evaluation will be performed for each ethernet payload size
+>>>     - ETH_PAYLOAD_SIZES: 46 100 300 500 700 900 1100 1300 1500
+
+>>> Current ethernet payload size: 46 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 100 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 300 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 500 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 700 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 900 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1100 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: 9600
+>>> RX side is ready, starting...
+>>> starting ETF run with ethernet payload size: 1100 bytes, interval: 9600 ns, frames: 520833
+
+Unicast destination is:	10.0.200.12:11111
+Finished sending packets...
+- num of sent packets:	520833
+- num of SO_TXTIME err:	0
+- num of sendmsg err:	0
+- num of times socket unblocking delay detected:	0
+
+>>> ETF run complete
+>>> waiting for RX side to finish processing...
+>>> RX side finished processing, continuing...
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1300 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> Current ethernet payload size: 1500 bytes
+>>> Enter the transmission interval (ns), or n to move to the next ethernet payload size: n
+>>> proceeding to the next Ethernet payload size
+>>> all ethernet payload sizes complete, exiting...
+>>> cleaning up
+0
+>>> killed 3317192 (phc2sys)
+0
+>>> killed 3317191 (ts2phc)

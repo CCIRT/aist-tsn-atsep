@@ -1,0 +1,77 @@
+$ sudo bash ../../secV-D2.scalability.rx_stats.sh -c ../../configs/netns.conf 
+>>> root privilege check ok
+>>> irqbalance check ok
+>>> waiting for tx side to set up netns...
+>>> netns atsclient and atsserver found
+>>> atsserver receiver started
+>>> waiting for tx side to start...
+>>> waiting for tx side to continue...
+>>> atsserver additional receiver started (2-4)
+>>> starting tcpdump: result_secV-D2.noSP.num_competeflow3.run2.pcap
+tcpdump: listening on enp3s0, link-type EN10MB (Ethernet), snapshot length 38 bytes
+                                                                                   434607 packets captured
+434607 packets received by filter
+0 packets dropped by kernel
+0
+>>> killed 3264150 (tcpdump)
+>>> calculating statistics of received packet intervals
+================= RUN 1 ======================
+- PCAPFILE: result_secV-D2.noSP.num_competeflow3.run2.pcap
+- iperf3 server log: result_secV-D2.noSP.num_competeflow3.run2.iperf3.log
+- number of competing flows: 3
+- total number of flows: 4
+
+# Calculating statistics of packet latency of the main flow
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+2726.78832	424.0	35535	412	35123	4400.861656202292
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+2726.78832
+35535
+412
+35123
+4400.861656202292
+
+----------------------------------------------
+# Calculating statistics of received packet intervals
+
+
+### Overall rate
+
+Flow	Rate(Mbps)	Duration(s)
+1	100.00106885895374	12.303868489
+
+----- Flow 1 -----
+NumPackets: 100000
+
+### Stats : Horizontal format (nanoseconds)
+
+Mean	Median	Max	Min	Max-Min	SD
+123039.9152891529	123034	147362	119433	27929	3008.9869032413253
+
+### Stats : Vertical format (nanoseconds)
+
+Mean	Max	Min	Max-Min	SD
+123039.9152891529
+147362
+119433
+27929
+3008.9869032413253
+==============================================
+
+>>> waiting for tx side to continue...
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 3263441 (nc 11111)
+0
+>>> killed 3264147 (nc 11112)
+0
+>>> killed 3264148 (nc 11113)
+0
+ >>> killed 3264149 (nc 11114)

@@ -1,0 +1,48 @@
+$ sudo ../../secV-C.priority.tx.sh -N -t -c ../../configs/netns.conf -T 5
+>>> root privilege check ok
+>>> isolcpus check ok
+>>> cpupower check ok
+>>> creating netns...
+>>> netns atsclient and atsserver already exist
+>>> enp1s0 enp3s0 EEE set to off
+>>> deleting existing qdisc on enp1s0 if exists. Ignore 'Error: Cannot delete qdisc with handle of zero.' error message if it appears.
+>>> atsclient enp1s0 qdisc set
+>>> atsclient enp1s0 ring buffer set
+>>> adding ARP entry. Ignore 'RTNETLINK answers: File exists' error message if it appears.
+RTNETLINK answers: File exists
+>>> atsclient enp1s0 arp table set
+>>> clocksync ts2phc and phc2sys set
+>>>     - log file: result_secV-C.netns.ts2phc.log
+>>>     - log file: result_secV-C.netns.phc2sys.log
+>>> check the above log files and wait for clock sync to stabilize before proceeding...
+>>> proceed?(y/n) :y
+>>> warmup start
+
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 900000000, num_packets: 50000, dest_port: 11111, now: 1774480915326286094
+
+>>> warmup complete
+>>> ats run start
+>>> Enter CIR in Mbps, or "n" to quit: 100
+>>> RX side is ready, starting...
+>>> starting Strict Priority iperf3
+>>> starting ATS run with CIR (Mbps): 100, #frames: 40637
+
+default SO_SNDBUF is:	212992
+size of UDP payload: 1472
+cir: 100000000, num_packets: 40637, dest_port: 11111, now: 1774480929069500267
+
+>>> ATS run complete
+>>> killing iperf client
+0
+>>> killed 1583247 (iperf client)
+>>> waiting for RX side to finish processing...
+>>> RX side finished processing, continuing...
+>>> Enter CIR in Mbps, or "n" to quit: n
+>>> exiting...
+>>> cleaning up
+0
+>>> killed 1583132 (phc2sys)
+0
+>>> killed 1583131 (ts2phc)
